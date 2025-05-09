@@ -1,0 +1,15 @@
+pandas
+scikit-learn
+matplotlib
+seaborn
+joblib
+psutil
+netifaces
+scapy
+numpy
+Pillow
+PyYAML
+torch 
+torchvision 
+torchaudio
+pypcap
