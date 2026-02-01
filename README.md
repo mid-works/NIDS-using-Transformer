@@ -50,7 +50,7 @@ python main.py --retrain
 ```
 
 flowchart TD
-```mermaid
+```mermaid```
     A[Internet / Live Traffic] -->|Packets| B[Scapy Packet Capture]
     B --> C[Flow Aggregation & Feature Extraction]
     C --> D{Timeout?}
@@ -66,7 +66,7 @@ flowchart TD
         M --> N[Save Best Model]
     end
     N --> G
-```
+
    # ⚙️ Installation
 Prerequisites
 
