@@ -2,11 +2,6 @@
 
 **Real-time Hybrid NIDS** using Scapy packet capture, flow-based feature extraction, and **Transformer** deep learning for accurate anomaly & attack detection.
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x400/1e1e2f/00ff9f?text=NIDS+Transformer+Dashboard+Live" alt="Live Dashboard Demo" width="80%"/>
-  <br>
-  <i>Real-time graphs • Attack classification • Smart alerts</i>
-</p>
 
 [![Python](https://img.shields.io/badge/python-3.12+-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
