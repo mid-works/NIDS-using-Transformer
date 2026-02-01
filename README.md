@@ -2,11 +2,6 @@
 
 **Hybrid Network Intrusion Detection System** powered by real-time packet capture, flow analysis, and **Transformer-based deep learning** for fast, accurate threat detection.
 
-<p align="center">
-  <img src="https://via.placeholder.com/800x400/1e1e2f/00ff9f?text=NIDS+Transformer+Dashboard+Demo" alt="Dashboard Demo" width="80%"/>
-  <br>
-  <i>Real-time monitoring • Attack classification • Probability alerts</i>
-</p>
 
 [![Python](https://img.shields.io/badge/python-3.12+-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -55,6 +50,7 @@ python main.py --retrain
 ```
 
 flowchart TD
+```mermaid
     A[Internet / Live Traffic] -->|Packets| B[Scapy Packet Capture]
     B --> C[Flow Aggregation & Feature Extraction]
     C --> D{Timeout?}
@@ -70,21 +66,21 @@ flowchart TD
         M --> N[Save Best Model]
     end
     N --> G
-
-    ⚙️ Installation
+```
+   # ⚙️ Installation
 Prerequisites
 
 Python 3.12+
 Admin / sudo rights (for live capture)
 Optional: NVIDIA GPU + CUDA (for faster training)
-
+```bash
 
 git clone https://github.com/mid-works/NIDS-using-Transformer.git
 cd NIDS-using-Transformer
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-
+```
 📊 Dataset
 Uses UNSW-NB15 by default — modern, realistic network flows with 9 attack families.
 
