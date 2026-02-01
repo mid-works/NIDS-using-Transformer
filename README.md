@@ -69,7 +69,7 @@ flowchart TD
         M --> N[Save Best Model]
     end
 
-    N -.-> G   %% dashed line = model is loaded for inference
+    N -.-> G
 ```
 
 
