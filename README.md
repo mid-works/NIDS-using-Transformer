@@ -50,7 +50,7 @@ python main.py --retrain
 ```
 
 flowchart TD
-```mermaid```
+```mermaid
     A[Internet / Live Traffic] -->|Packets| B[Scapy Packet Capture]
     B --> C[Flow Aggregation & Feature Extraction]
     C --> D{Timeout?}
@@ -66,7 +66,7 @@ flowchart TD
         M --> N[Save Best Model]
     end
     N --> G
-
+```
    # ⚙️ Installation
 Prerequisites
 
@@ -94,9 +94,8 @@ Just place CSV in data/ with at least these columns:
 ```csv
 dur,proto,service,state,spkts,dpkts,sbytes,dbytes,rate,sload,dload,label
 ```
-
-🧠 Training
-Bash# Retrain from scratch (takes time — use GPU!)
+## 🧠 Training
+# Retrain from scratch (takes time — use GPU!)
 ```
 python main.py --retrain
 
@@ -105,7 +104,7 @@ python main.py
 
 ```
 
-[!NOTE]
+# [!NOTE]
 Tune hyperparameters in CONFIG dict: learning rate, epochs, flow timeout, alert thresholds, top-k features, etc.
 ```text
 Example training log:
@@ -114,7 +113,7 @@ Epoch 1/10 - loss: 0.685 → acc: 0.74
 Epoch 2/10 - loss: 0.421 → acc: 0.89
 ```
 
-📈 Real-Time Monitoring
+## 📈 Real-Time Monitoring
 
 Launch → GUI opens
 Pick network interface (eth0, wlan0, etc.)
@@ -126,7 +125,7 @@ Alert feed with severity (low/medium/high/critical)
 History log
 
 
-[!WARNING]
+## [!WARNING]
 On Windows, Npcap must be installed for Scapy to capture packets.
 🤝 Contributing
 Love to have your help!
@@ -136,6 +135,6 @@ Commit (git commit -m 'Add support for XYZ attack')
 Push & open PR
 
 Even docs, bug reports, or new dataset tests are super welcome!
-📄 License
-MIT © Midhun (mid-works) 2025–2026
+## 📄 License
+MIT © Midhun (mid-works) 2024–2025
 Star ⭐ if this helps your security project!
