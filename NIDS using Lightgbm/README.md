@@ -124,27 +124,27 @@ Model saved → ready for inference!
 
 ## 📈 Real-Time Monitoring
 
-Run the app → GUI launches
-Select network interface (e.g. eth0, wlan0)
-Click Start
-Monitor:
-Live packets/sec & flow rate graphs
-Attack type distribution (pie/bar)
-Rolling alert feed with severity coloring
-History & export logs
+- Run the app → GUI launches
+- Select network interface (e.g. eth0, wlan0)
+- Click Start
+# Monitor:
+- Live packets/sec & flow rate graphs
+- Attack type distribution (pie/bar)
+- Rolling alert feed with severity coloring
+- History & export logs
 
 
 ## 🤝 Contributing
 Contributions welcome — security tools need community!
 
-Fork the repo
-Create feature branch (git checkout -b feature/better-alerts)
-Commit your changes
-Push & open a Pull Request
+- Fork the repo
+- Create feature branch (git checkout -b feature/better-alerts)
+- Commit your changes
+- Push & open a Pull Request
 
-Even small fixes (docs, bugs, new datasets) are appreciated!
+-- Even small fixes (docs, bugs, new datasets) are appreciated!
 ## 📄 License
-MIT © Midhun (mid_works) 2026
+-- MIT © Midhun (mid_works) 2026
 
-⭐ Star if this project helps your cybersecurity journey!
+-- ⭐ Star if this project helps your cybersecurity journey!
 text
