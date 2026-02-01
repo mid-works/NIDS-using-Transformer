@@ -49,8 +49,10 @@ python main.py
 
 Select network interface in GUI → Click Start Monitoring → Watch threats in real time!
 [!TIP]
+```bash
 Want to retrain on your data?
 python main.py --retrain
+```
 
 flowchart TD
     A[Internet / Live Traffic] -->|Packets| B[Scapy Packet Capture]
