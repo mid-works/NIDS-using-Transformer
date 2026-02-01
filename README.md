@@ -1,127 +1,143 @@
-# NIDS-using-Transformer
+# NIDS-using-Transformer 🛡️🔥
 
+**Hybrid Network Intrusion Detection System** powered by real-time packet capture, flow analysis, and **Transformer-based deep learning** for fast, accurate threat detection.
 
-A hybrid network intrusion detection system combining packet capture, flow analysis, and Transformer-based deep learning for real-time threat detection.
+<p align="center">
+  <img src="https://via.placeholder.com/800x400/1e1e2f/00ff9f?text=NIDS+Transformer+Dashboard+Demo" alt="Dashboard Demo" width="80%"/>
+  <br>
+  <i>Real-time monitoring • Attack classification • Probability alerts</i>
+</p>
 
-## Table of Contents
+[![Python](https://img.shields.io/badge/python-3.12+-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Stars](https://img.shields.io/github/stars/mid-works/NIDS-using-Transformer?style=for-the-badge&color=yellow)](https://github.com/mid-works/NIDS-using-Transformer/stargazers)
+[![Forks](https://img.shields.io/github/forks/mid-works/NIDS-using-Transformer?style=for-the-badge&color=green)](https://github.com/mid-works/NIDS-using-Transformer/network/members)
+[![Issues](https://img.shields.io/github/issues/mid-works/NIDS-using-Transformer?style=for-the-badge&color=red)](https://github.com/mid-works/NIDS-using-Transformer/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/mid-works/NIDS-using-Transformer?style=for-the-badge&color=purple)](https://github.com/mid-works/NIDS-using-Transformer/commits)
 
-- [Features](#features)
-- [Architecture](#architecture)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Dataset](#dataset)
-- [Training Models](#training-models)
-- [License](#license)
+> [!IMPORTANT]  
+> Requires **admin privileges** for live packet capture (Scapy needs it).  
+> GPU strongly recommended for training.
 
-## Features ✨
+## ✨ Features
 
-- **Real-Time Flow Monitoring**  
-  - Packet capture and flow feature extraction
-  - Protocol analysis (TCP/UDP/ICMP)
-  - Flow timeout management
-- **Advanced Detection Engine**  
-  - Transformer-based neural network for anomaly detection
-  - Feature correlation analysis
-  - Probability-based alert thresholds
-- **Comprehensive GUI**  
-  - Real-time packet rate visualization
-  - Attack classification dashboard
-  - Alert history with severity levels
-- **Modular Design**  
-  - Preprocessing pipeline with feature scaling
-  - Feature selection based on correlation
-  - Model training and evaluation framework
+- 🚀 **Real-time** packet capture & flow feature extraction (Scapy)
+- 📊 Protocol dissection (TCP/UDP/ICMP) + flow timeout logic
+- 🧠 **Transformer** deep learning model for anomaly & attack classification
+- ⚡ Feature correlation + selection + scaling pipeline
+- 📈 Beautiful **GUI dashboard** — live packet rate, alerts, history, severity
+- 🔔 Probability-based multi-threshold alerting
+- 🛠️ Fully modular — easy to swap models, datasets, thresholds
 
-## Quick Start
+## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/yourusername/transformer-nids.git
-cd transformer-nids
-pip install -r requirements.txt
-python main.py
-```
-
-## Architecture 🏗️
-
-1. **Packet Capture Layer**: Scapy-based real-time packet sniffer
-2. **Flow Analysis**: Feature extraction and flow timeout handling
-3. **Preprocessing**: Feature scaling and categorical encoding
-4. **Detection Engine**: Transformer model for classification
-5. **Alert System**: Multi-threshold alert generation
-6. **GUI**: Real-time monitoring dashboard
-
-## Installation ⚙️
-
-### Prerequisites
-- Python 3.12+
-- Administrative privileges for packet capture
-- NVIDIA GPU (recommended for training)
-
-```bash
-# Clone repository
-git clone https://github.com/mid-works/NIDS-using-Transformer
+# 1. Clone & enter
+git clone https://github.com/mid-works/NIDS-using-Transformer.git
 cd NIDS-using-Transformer
 
-# Create virtual environment
+# 2. Virtual env (recommended)
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate        # Windows: venv\Scripts\activate
 
-# Install dependencies
+# 3. Install deps
 pip install -r requirements.txt
-```
 
-## Usage 🚀
-
-### Data Preparation
-Place your dataset in `data/` directory:
-- `UNSW_NB15_training-set.csv` - Network flow data with labels
-
-### Training the Model
-```bash
-# Train with default settings
-python main.py --retrain
-
-# Use pre-trained model (default)
+# 4. Run (uses pre-trained model by default)
 python main.py
 ```
 
-### Real-Time Monitoring
-1. Select network interface from GUI dropdown
-2. Click "Start Monitoring"
-3. View real-time statistics and alerts
+Select network interface in GUI → Click Start Monitoring → Watch threats in real time!
+[!TIP]
+Want to retrain on your data?
+python main.py --retrain
 
-## Dataset 📊
+flowchart TD
+    A[Internet / Live Traffic] -->|Packets| B[Scapy Packet Capture]
+    B --> C[Flow Aggregation & Feature Extraction]
+    C --> D{Timeout?}
+    D -->|Yes| E[Export Flow Features]
+    E --> F[Preprocessing: Scaling + Encoding + Correlation Selection]
+    F --> G[Transformer Model Inference]
+    G --> H{Anomaly Probability > Threshold?}
+    H -->|Yes| I[Generate Alert + Severity]
+    I --> J[GUI Dashboard: Graphs, Alerts, History]
+    J --> K[User: Real-time View + Logs]
+    subgraph "Offline Training"
+        L[UNSW-NB15 or Custom CSV] --> M[Train Transformer]
+        M --> N[Save Best Model]
+    end
+    N --> G
 
-The system uses the [UNSW-NB15 dataset](https://research.unsw.edu.au/projects/unsw-nb15-dataset) by default. To use custom data:
+    ⚙️ Installation
+Prerequisites
 
-Required columns in CSV:
+Python 3.12+
+Admin / sudo rights (for live capture)
+Optional: NVIDIA GPU + CUDA (for faster training)
+
+
+git clone https://github.com/mid-works/NIDS-using-Transformer.git
+cd NIDS-using-Transformer
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+📊 Dataset
+Uses UNSW-NB15 by default — modern, realistic network flows with 9 attack families.
+
+  UNSW-NB15 Feature Importance Example
+  
+Example: Feature importance ranking from research on UNSW-NB15
+
+Custom dataset?
+Just place CSV in data/ with at least these columns:
+
 ```csv
 dur,proto,service,state,spkts,dpkts,sbytes,dbytes,rate,sload,dload,label
 ```
 
-## Training Models 🧠
-
-Configuration options in `CONFIG` dictionary:
-- Model hyperparameters
-- Flow timeout settings
-- Alert thresholds
-- Feature selection count
-
-Example training output:
+🧠 Training
+Bash# Retrain from scratch (takes time — use GPU!)
 ```
-[2023-11-15 10:00:00] Training Transformer...
-Epoch 1/5 - loss: 0.6921 - accuracy: 0.7124
-Epoch 2/5 - loss: 0.5123 - accuracy: 0.8231
+python main.py --retrain
+
+# Or just use the saved model (fast)
+python main.py
+
 ```
 
-## Contributing 🤝
+[!NOTE]
+Tune hyperparameters in CONFIG dict: learning rate, epochs, flow timeout, alert thresholds, top-k features, etc.
+```text
+Example training log:
+text[2025-02-01] Training Transformer...
+Epoch 1/10 - loss: 0.685 → acc: 0.74
+Epoch 2/10 - loss: 0.421 → acc: 0.89
+```
 
-1. Fork the project
-2. Create your feature branch 
-3. Commit changes 
-4. Push to branch 
-5. Open a Pull Request
+📈 Real-Time Monitoring
 
-## License 📄
+Launch → GUI opens
+Pick network interface (eth0, wlan0, etc.)
+Hit Start
+Watch:
+Live packets/sec graph
+Attack types pie/bar
+Alert feed with severity (low/medium/high/critical)
+History log
 
-Distributed under the MIT License. See `LICENSE` for details.
+
+[!WARNING]
+On Windows, Npcap must be installed for Scapy to capture packets.
+🤝 Contributing
+Love to have your help!
+
+Fork & create branch (git checkout -b feature/new-attack-type)
+Commit (git commit -m 'Add support for XYZ attack')
+Push & open PR
+
+Even docs, bug reports, or new dataset tests are super welcome!
+📄 License
+MIT © Midhun (mid-works) 2025–2026
+Star ⭐ if this helps your security project!
