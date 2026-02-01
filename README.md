@@ -49,24 +49,30 @@ Want to retrain on your data?
 python main.py --retrain
 ```
 
-flowchart TD
+## 🏗️ System Architecture
+
 ```mermaid
+flowchart TD
     A[Internet / Live Traffic] -->|Packets| B[Scapy Packet Capture]
     B --> C[Flow Aggregation & Feature Extraction]
     C --> D{Timeout?}
     D -->|Yes| E[Export Flow Features]
-    E --> F[Preprocessing: Scaling + Encoding + Correlation Selection]
+    E --> F[Preprocessing:\nScaling + Encoding + Correlation Selection]
     F --> G[Transformer Model Inference]
     G --> H{Anomaly Probability > Threshold?}
     H -->|Yes| I[Generate Alert + Severity]
-    I --> J[GUI Dashboard: Graphs, Alerts, History]
+    I --> J[GUI Dashboard:\nGraphs, Alerts, History]
     J --> K[User: Real-time View + Logs]
-    subgraph "Offline Training"
+
+    subgraph "Offline Training (Model Building)"
         L[UNSW-NB15 or Custom CSV] --> M[Train Transformer]
         M --> N[Save Best Model]
     end
-    N --> G
+
+    N -.-> G   %% dashed line = model is loaded for inference
 ```
+
+
    # ⚙️ Installation
 Prerequisites
 
